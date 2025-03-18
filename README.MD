@@ -53,13 +53,13 @@ PGSyncer
 - `--force-psql` (bool, по умолч. false) – применять DDL через `psql -f -`, а не через ExecContext.
 
 Пример запуска с инкрементальной синхронизацией:
-```bash
+
 ./pgsyncer \
   --maindsn="postgres://user:pass@mainhost:5432/main_db?sslmode=disable" \
   --standindsn="postgres://user:pass@standinhost:5432/standin_db?sslmode=disable" \
   --use-updated-at \
   --last-sync-time="2025-03-01 00:00:00"
-```
+
 
 ## Принцип работы
 
@@ -81,7 +81,7 @@ PGSyncer
    - В резервной БД автоматически создаётся (если нет) расширение `postgres_fdw`, сервер, user mapping, и через `IMPORT FOREIGN SCHEMA` подключаются таблицы из основной БД как foreign tables.  
    - Это даёт возможность выполнять `INSERT INTO local_table SELECT * FROM foreign_table` напрямую, без выгрузки в Go.
 
-## Системные требования
+Системные требования
 
 - PostgreSQL 9.5+ (из-за `ON CONFLICT DO UPDATE` и postgres_fdw; лучше 10+).  
 - Go 1.18+.  
