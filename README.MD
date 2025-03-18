@@ -33,13 +33,13 @@ PGSyncer
 
 Минимально программа требует две строки подключения – к основной (–maindsn) и резервной (–standindsn). Пример:
 
-```bash
+
 ./pgsyncer \
   --maindsn="postgres://user:pass@localhost:5432/main_db?sslmode=disable" \
   --standindsn="postgres://user:pass@localhost:5432/standin_db?sslmode=disable"
-```
 
-**Основные флаги** (см. `--help` для полного списка):
+
+Основные флаги (см. `--help` для полного списка):
 - `--sync-schema` (bool, по умолч. true) – синхронизировать структуру (DDL) через `pg_dump`.
 - `--sync-data` (bool, по умолч. true) – синхронизировать данные.
 - `--clean-extra` (bool, по умолч. false) – удалять «лишние» объекты в резервной БД, которые отсутствуют в основной.
