@@ -94,8 +94,7 @@ func applyDDLToStandin(ddl string) error {
 
 // applyDDLviaPSQL — альтернатива: запускаем psql -f - и подаём DDL на stdin
 func applyDDLviaPSQL(cfg *Config, ddl string) error {
-    // При желании можно распарсить cfg.StandinDSN, чтобы вызвать psql c -h, -p, -U, -d ...
-    // Пока демонстрационно используем просто psql <dsn>
+
     cmd := exec.Command("psql", cfg.StandinDSN)
 
     stdin, err := cmd.StdinPipe()
