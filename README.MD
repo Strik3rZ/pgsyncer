@@ -28,7 +28,7 @@
 1. Убедитесь, что установлен Go **1.18+**
 2. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/Striker2k18/pgsyncer.git
+   git clone https://github.com/Strik3rZ/pgsyncer.git
    cd pgsyncer
    ```
 
